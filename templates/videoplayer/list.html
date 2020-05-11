@@ -1,0 +1,10 @@
+{%block content%}
+{%load static%}
+<h1>List of Movies</h1>
+        <ol type="1">
+        {%for vids in allvids %}
+            <li><a style="font-size: 20;" href="{%url 'player' name=vids%} ">{{vids}}</a></li>
+        {%endfor%}
+        
+        </ol>
+{%endblock%}

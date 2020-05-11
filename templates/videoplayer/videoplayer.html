@@ -1,0 +1,33 @@
+{%extends "videoplayer/base.html"%}
+
+{%block content%}
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<!--{% get_static_prefix %}static/video/{{vids}}"-->
+<style>
+    body{
+        background-color: black;
+        color:white;
+    }
+    video{
+        display:block;
+        margin:auto;
+        width:100%;
+        height:auto;
+    }
+    h4{
+        color:orange;
+        font-size: 20px;
+    }
+</style>
+<video controls autoplay id="vid">
+  
+  <source src="{%static ''%}video/{{name}}" type="video/mp4">
+  
+</video>
+<br><br>
+<h4>{{name}}<br>
+<a href="{% url 'listofmovies' %}" style="color:orange;font-size: 30px;">List</a>
+
+
+{%endblock%}
